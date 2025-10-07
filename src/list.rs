@@ -35,10 +35,15 @@ impl<T> ListNode<T> {
     /// Inserts a new list node with value `value` after `self` and returns a reference to the new
     /// node
     pub fn insert(&mut self, value: T) -> &mut Self {
-        let old_self= mem::take(self);
-        *self = ListNode::Cons(value, Box::new(old_self));
-        self
-    }
+      match self {
+          ListNode::Nil => {
+              *self = ListNode::Cons(value, Box::new(ListNode::Nil));
+              self
+          }
+          ListNode::Cons(_, next) => next.insert(value),
+      }
+  }
+  
     /// Reverses the list in place.
     pub fn reverse(&mut self) {
       let mut prev = ListNode::Nil;
@@ -91,7 +96,7 @@ impl<T: Display> Display for ListNode<T> {
 impl<T> From<Vec<T>> for ListNode<T> {
     fn from(vec: Vec<T>) -> Self {
         let mut list = ListNode::Nil;
-        for value in vec.into_iter().rev() {
+        for value in vec {
             list.insert(value);
         }
         list
