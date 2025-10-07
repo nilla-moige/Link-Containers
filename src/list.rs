@@ -91,7 +91,7 @@ impl<T: Display> Display for ListNode<T> {
 impl<T> From<Vec<T>> for ListNode<T> {
     fn from(vec: Vec<T>) -> Self {
         let mut list = ListNode::Nil;
-        for value in vec.into_iter().rev() {
+        for value in vec {
             list.insert(value);
         }
         list
