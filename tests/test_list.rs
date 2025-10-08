@@ -39,7 +39,7 @@ pub fn test_impls_default_3() {
 }
 
 /// This test checks that `ListNode` properly implements `PartialEq`
-/*
+
 #[test]
 pub fn test_impls_partialeq_5() {
     let list1 = ListNode::Cons(
@@ -103,10 +103,10 @@ pub fn test_impls_partialeq_5() {
         assert!(false);
     }
 }
-*/
+
 
 /// This test checks that `ListNode` properly implements `Eq`
-/*
+
 #[test]
 pub fn test_impls_eq_3() {
     let list1 = ListNode::Cons(
@@ -170,10 +170,10 @@ pub fn test_impls_eq_3() {
         assert!(false);
     }
 }
-*/
+
 
 /// This test checks that `ListNode` properly implements `Display`
-/*
+
 #[test]
 pub fn test_impls_display_3() {
     let list1 = ListNode::Cons(
@@ -196,10 +196,10 @@ pub fn test_impls_display_3() {
     assert_eq!(format!("{}", list2), "-1 -> 999 -> 0 -> Nil");
     assert_eq!(format!("{}", list3), "Nil");
 }
-*/
+
 
 /// This test checks that the `insert` works in a simple case
-/*
+
 #[test]
 pub fn test_insert_simple_3() {
     let mut head = ListNode::default();
@@ -218,13 +218,13 @@ pub fn test_insert_simple_3() {
         )
     );
 }
-*/
+
 
 /// This test uses "property-based testing": this means it generates random test cases
 /// and checks that a property holds for all of them.
 /// In this case, the property is that adding all the elements from a `Vec<i32>` to a `ListNode<i32>`
 /// and converting it back to a `Vec<i32>` should yield the same `Vec<i32>` you started with.
-/*
+
 #[test]
 pub fn test_insert_7() {
     fn insert_is_valid(v: Vec<i32>) -> bool {
@@ -253,14 +253,13 @@ pub fn test_insert_7() {
     }
     quickcheck(insert_is_valid as fn(Vec<i32>) -> bool);
 }
-*/
 
 /// This test uses "property-based testing": this means it generates random test cases
 /// and checks that a property holds for all of them.
 /// In this case, the property is that converting a `Vec<i32>` to a `ListNode<i32>` and
 /// calling `reverse` on it should yield a `ListNode<i32>` that, when converted back to a `Vec<i32>`,
 /// is the reverse of the original `Vec<i32>`.
-/*
+
 #[test]
 pub fn test_reverse_7() {
     fn reverse_is_valid(v: Vec<i32>) -> bool {
@@ -291,10 +290,10 @@ pub fn test_reverse_7() {
     }
     quickcheck(reverse_is_valid as fn(Vec<i32>) -> bool);
 }
-*/
+
 
 /// This test checks that `ListNode` properly implements `From<Vec>`
-/*
+
 #[test]
 pub fn test_impls_list_from_vec_3() {
     let v = vec![Num(1), Num(2), Num(3)];
@@ -320,10 +319,10 @@ pub fn test_impls_list_from_vec_3() {
     );
     assert!(false);
 }
-*/
+
 
 /// This test checks that Vec properly implements `From<ListNode>`
-/*
+
 #[test]
 pub fn test_impls_vec_from_list_3() {
     let list = ListNode::Cons(
@@ -358,13 +357,13 @@ pub fn test_impls_vec_from_list_3() {
         file!()
     );
 }
-*/
+
 
 /// This test uses "property-based testing": this means it generates random test cases
 /// and checks that a property holds for all of them.
 /// In this case, the property is that converting a `Vec<i32>` to a `ListNode<i32>` and back
 /// to a `Vec<i32>` should yield the same `Vec<i32>` you started with.
-/*
+
 #[test]
 pub fn test_vec_to_list_to_vec_roundtrip_8() {
     fn roundtrip(v: Vec<i32>) {
@@ -374,6 +373,6 @@ pub fn test_vec_to_list_to_vec_roundtrip_8() {
     }
     quickcheck(roundtrip as fn(Vec<i32>));
 }
-*/
+
 
 const _UNUSED: bool = true;
